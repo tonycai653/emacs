@@ -1,0 +1,11 @@
+cd
+ls
+mkdir c && cd c
+pwd
+ls
+cd c
+exit
+man 2 socket
+cc argc_argv1.c -o argc_argv1
+./argc_argv1 
+./argc_argv1 hello world -n -m
