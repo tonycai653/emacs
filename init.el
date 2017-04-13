@@ -21,7 +21,6 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 
-(require 'init-ibuffer)
 (require 'init-recentf)
 ;; If you really prefer ido to ivy, change the comments below. I will
 ;; likely remove the ido config in due course, though.
