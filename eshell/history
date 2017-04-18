@@ -9,3 +9,27 @@ man 2 socket
 cc argc_argv1.c -o argc_argv1
 ./argc_argv1 
 ./argc_argv1 hello world -n -m
+ls
+cd lisp/
+ls
+rm init-evil.el 
+ls
+cat init-folding.el 
+rm init-folding.el 
+ls
+rm init-flyspell.el 
+ls
+cd ..
+ls
+rm elpa/origami-20170129.805/
+rm -rf elpa/origami-20170129.805/
+exit
+python3 main.py 
+python3 main.py 
+python3 main.py 
+python3 main.py 
+ls
+ls player_honors_paths | wc -l
+cat player_honors_paths 
+ls
+ls phonorspages

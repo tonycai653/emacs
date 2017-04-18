@@ -46,7 +46,8 @@
     (add-hook 'company-completion-finished-hook 'sanityinc/page-break-lines-maybe-reenable)
     (add-hook 'company-completion-cancelled-hook 'sanityinc/page-break-lines-maybe-reenable)))
 
-(setq company-idle-delay 0.5)
+(setq company-idle-delay 0.1)
+(setq company-dabbrev-downcase 0)
 
 ;; for emacs with dark background
 (set-background-color "black")

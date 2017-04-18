@@ -9,9 +9,11 @@
     (setq load-path (remove package-el-site-lisp-dir load-path))))
 
 (require 'package)
+(require 'cl)
 
 
 ;;; Standard package repositories
+;;(add-to-list 'package-archives '("popkit" . "http://elpa.popkit.org/packages/"))
 
 (when (< emacs-major-version 24)
   ;; Mainly for ruby-mode
@@ -37,24 +39,81 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
+(defvar user-packages
+  '(undo-tree    
+    cl
+    ivy
+    magit
+    yafolding
+    counsel
+    diminish
+    flx
+    company
+    color
+    highlight-escape-sequences
+    unfill
+    projectile
+    pip-requirements
+    anaconda-mode
+    company-anaconda
+    elisp-slime-nav
+    lively
+    ipretty
+    auto-compile
+    cl-lib-highlight
+    macrostep
+    flycheck
+    flycheck-package
+    cask-mode
+    hl-sexp
+    immortal-scratch
+    aggressive-indent
+    redshank
+    eldoc-eval
+    highlight-quoted
+    rainbow-mode
+    paredit
+    server
+    )
+  "A list of packages to ensure are installed at launch")
 
-(require 'cl-lib)
+(defun packages-installed-p ()
+  "Check if all packages in `user-packages` are installed."
+  (every #'package-installed-p user-packages))
 
-(defun sanityinc/set-tabulated-list-column-width (col-name width)
-  "Set any column with name COL-NAME to the given WIDdH."
-  (when (> width (length col-name))
-    (cl-loop for column across tabulated-list-format
-             when (string= col-name (car column))
-             do (setf (elt column 1) width))))
 
-(defun sanityinc/maybe-widen-package-menu-columns ()
-  "Widen some columns of the package menu table to avoid truncation."
-  (when (boundp 'tabulated-list-format)
-    (sanityinc/set-tabulated-list-column-width "Version" 13)
-    (let ((longest-archive-name (apply 'max (mapcar 'length (mapcar 'car package-archives)))))
-      (sanityinc/set-tabulated-list-column-width "Archive" longest-archive-name))))
+(defun install-package (package)
+  "Install PACKAGE unless already installed."
+  (unless (memq package user-packages)
+    (add-to-list 'user-packages package))
+  (unless (package-installed-p package)
+    (package-install package)))
 
-(add-hook 'package-menu-mode-hook 'sanityinc/maybe-widen-package-menu-columns)
 
+(defun install-packages (packages)
+  "Ensure PACKAGES are installed.                                                                                                                       
+Missing packages are installed automatically."
+  (mapc #'install-package packages))
+
+
+(defun install-packages-user-packages ()
+  "Install all packages listed in `user-packages'."
+  (unless (packages-installed-p)
+    ;; check for new packages (package versions)                                                                                                        
+    (message "%s" "Emacs is now refreshing its package database...")
+    (package-refresh-contents)
+    (message "%s" " done.")
+    ;; install the misssing packages                                                                                                                    
+    (install-packages user-packages)))
+;; run package installation                                                                                                                             
+(install-packages-user-packages)
+
+
+(defun list-foreighn-packages ()
+  "Browse third-party packages not bundled with `user-packages'.                                                                                        
+Behave similarly to `package-list-packages', but show only the packages that                                                                           are installed and are not in `user-packages'. Useful for removing unwanted packages."
+  (interactive)
+  (package-show-package-list
+   (set-difference package-activated-list user-packages)))
 
 (provide 'init-elpa)
