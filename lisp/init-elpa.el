@@ -42,6 +42,9 @@
 (defvar user-packages
   '(undo-tree
     realgud
+    zenburn-theme
+    column-marker
+    highlight-indent-guides
     cl
     ivy
     magit
