@@ -30,7 +30,18 @@
 (define-key yafolding-mode-map (kbd "<C-S-return>") nil)
 (define-key yafolding-mode-map (kbd "<C-M-return>") nil)
 (define-key yafolding-mode-map (kbd "<C-return>") nil)
-(define-key yafolding-mode-map (kbd "C-c f") 'yafolding-toggle-all)
-(define-key yafolding-mode-map (kbd "C-c F") 'yafolding-toggle-element)
+(define-key yafolding-mode-map (kbd "C-c F") 'yafolding-toggle-all)
+(define-key yafolding-mode-map (kbd "C-c f") 'yafolding-toggle-element)
+
+(setq python-shell-interpreter "ipython3"
+      python-shell-interpreter-args "--simple-prompt -i")
+
+(defun python-shell-completion-native-try ()
+  "Return non-nil if can trigger native completion"
+  (with-eval-after-load 'python
+    '(let ((python-shell-completion-native-enable t)
+           (python-shell-completion-native-output-timeout python-shell-completion-native-try-output-timeout))
+       (python-shell-completion-native-get-completions (get-buffer-process (current-buffer))
+                                                       nil "_"))))
 
 (provide 'init-python-mode)

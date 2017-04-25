@@ -40,7 +40,8 @@
 (package-initialize)
 
 (defvar user-packages
-  '(undo-tree    
+  '(undo-tree
+    realgud
     cl
     ivy
     magit
