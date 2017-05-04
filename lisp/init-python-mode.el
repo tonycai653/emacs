@@ -26,6 +26,7 @@
 (add-hook 'python-mode-hook 'highlight-indent-guides-mode)
 (setq highlight-indent-guides-method 'character)
 
+;; yafolding
 (add-hook 'python-mode-hook 'yafolding-mode)
 (define-key yafolding-mode-map (kbd "<C-S-return>") nil)
 (define-key yafolding-mode-map (kbd "<C-M-return>") nil)
