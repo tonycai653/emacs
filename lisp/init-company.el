@@ -18,7 +18,7 @@
   (define-key company-active-map (kbd "M-p") nil)
   (define-key company-active-map (kbd "C-n") 'company-select-next)
   (define-key company-active-map (kbd "C-p") 'company-select-previous)
-  (setq-default company-backends '((company-capf company-dabbrev-code) company-dabbrev)
+  (setq-default company-backends '((company-capf company-dabbrev-code company-dabbrev))
                 company-dabbrev-other-buffers 'all))
 (global-set-key (kbd "M-C-/") 'company-complete)
 
