@@ -23,15 +23,6 @@
 (define-key origami-mode-map (kbd "C-c F") 'origami-recursively-toggle-node)
 (define-key origami-mode-map (kbd "C-c T") 'origami-toggle-all-nodes)
 
-(setq python-shell-interpreter "ipython3"
-      python-shell-interpreter-args "--simple-prompt -i")
-
-(defun python-shell-completion-native-try ()
-  "Return non-nil if can trigger native completion"
-  (with-eval-after-load 'python
-    '(let ((python-shell-completion-native-enable t)
-           (python-shell-completion-native-output-timeout python-shell-completion-native-try-output-timeout))
-       (python-shell-completion-native-get-completions (get-buffer-process (current-buffer))
-                                                       nil "_"))))
+(setq python-shell-interpreter "python3")
 
 (provide 'init-python-mode)
