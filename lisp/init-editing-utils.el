@@ -28,14 +28,15 @@
  tooltip-delay 1.5
  truncate-lines nil
  menu-bar-mode 0
- truncate-partial-width-windows nil)
+ truncate-partial-width-windows nil
+ kill-whole-line t)
 
 (global-auto-revert-mode)
 (setq global-auto-revert-non-file-buffers t
       auto-revert-verbose nil)
 
 (transient-mark-mode t)
-(global-set-key (kbd "M-SPC") (lambda () (interactive) (push-mark nil nil 1)))
+(global-set-key (kbd "M-SPC") 'set-mark-command)
 
 (defun sanityinc/flash-mode-line ()
   (invert-face 'mode-line)
