@@ -44,11 +44,10 @@
     realgud
     zenburn-theme
     column-marker
-    highlight-indent-guides
+    origami
     cl
     ivy
     magit
-    yafolding
     counsel
     diminish
     flx
@@ -58,8 +57,6 @@
     unfill
     projectile
     pip-requirements
-    anaconda-mode
-    company-anaconda
     elisp-slime-nav
     lively
     ipretty

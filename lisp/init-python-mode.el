@@ -1,38 +1,27 @@
 (require 'pip-requirements)
-(require 'anaconda-mode)
-(require 'company-anaconda)
 (require 'column-marker)
-(require 'highlight-indent-guides)
-(require 'yafolding)
+(require 'elpy)
+(require 'origami)
 
 (setq auto-mode-alist
       (append '(("SConstruct\\'" . python-mode)
 		("SConscript\\'" . python-mode))
               auto-mode-alist))
+;; using elpy
+(elpy-enable)
+(setq elpy-rpc-backend "jedi")
+(setq elpy-rpc-python-command "python3")
 
 
-(after-load 'python
-  (add-hook 'python-mode-hook 'anaconda-mode)
-  (add-hook 'python-mode-hook 'anaconda-eldoc-mode))
-
-(after-load 'company
-  (add-hook 'python-mode-hook
-            (lambda () (sanityinc/local-push-company-backend 'company-anaconda))))
-
-;; set column marker
+;; column marker
 (set-face-background 'column-marker-1 "red")
 (add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 80)))
 
-(add-hook 'python-mode-hook 'highlight-indent-guides-mode)
-(setq highlight-indent-guides-method 'character)
-
-;; yafolding
-(add-hook 'python-mode-hook 'yafolding-mode)
-(define-key yafolding-mode-map (kbd "<C-S-return>") nil)
-(define-key yafolding-mode-map (kbd "<C-M-return>") nil)
-(define-key yafolding-mode-map (kbd "<C-return>") nil)
-(define-key yafolding-mode-map (kbd "C-c F") 'yafolding-toggle-all)
-(define-key yafolding-mode-map (kbd "C-c f") 'yafolding-toggle-element)
+;; origmi
+(add-hook 'python-mode-hook 'origami-mode)
+(define-key origami-mode-map (kbd "C-c f") 'origami-toggle-node)
+(define-key origami-mode-map (kbd "C-c F") 'origami-recursively-toggle-node)
+(define-key origami-mode-map (kbd "C-c T") 'origami-toggle-all-nodes)
 
 (setq python-shell-interpreter "ipython3"
       python-shell-interpreter-args "--simple-prompt -i")

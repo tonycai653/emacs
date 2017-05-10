@@ -10,7 +10,6 @@
 ;; Stop completion-at-point from popping up completion buffers so eagerly
 (setq completion-cycle-threshold 5)
 
-
 (add-hook 'after-init-hook 'global-company-mode)
 (after-load 'company
   (define-key company-mode-map (kbd "M-/") 'company-complete)
@@ -22,13 +21,13 @@
                 company-dabbrev-other-buffers 'all))
 (global-set-key (kbd "M-C-/") 'company-complete)
 
+
 ;;(add-hook 'after-init-hook 'company-quickhelp-mode)
 
 (defun sanityinc/local-push-company-backend (backend)
   "Add BACKEND to a buffer-local version of `company-backends'."
   (set (make-local-variable 'company-backends)
        (append (list backend) company-backends)))
-
 
 ;; Suspend page-break-lines-mode while company menu is active
 ;; (see https://github.com/company-mode/company-mode/issues/416)
@@ -50,18 +49,16 @@
     (add-hook 'company-completion-cancelled-hook 'sanityinc/page-break-lines-maybe-reenable)))
 
 (setq company-idle-delay 0.1)
+(setq comany-tooltip-limit 10)
 (setq company-dabbrev-downcase 0)
 
 ;; for emacs with dark background
-(set-background-color "black")
+;;(set-background-color "black")
 
-(let ((bg (face-attribute 'default :background)))
-  (custom-set-faces
-   `(company-tooltip ((t (:inherit default :background ,(color-lighten-name bg 2)))))
-   `(company-scrollbar-bg ((t (:background ,(color-lighten-name bg 10)))))
-   `(company-scrollbar-fg ((t (:background ,(color-lighten-name bg 5)))))
-   `(company-tooltip-selection ((t (:inherit font-lock-function-name-face))))
-   `(company-tooltip-common ((t (:inherit font-lock-constant-face))))))
-
+(progn
+  (set-face-attribute 'company-tooltip nil :background "brightblack")
+  (set-face-attribute 'company-tooltip-selection nil :background "magenta")
+  (set-face-attribute 'company-tooltip-common nil :background nil :foreground "#B58900" :inherit 'company-tooltip)
+  (set-face-attribute 'company-tooltip-common-selection nil :background nil :foreground "#B58900" :inherit 'company-tooltip-selection))
 
 (provide 'init-company)
