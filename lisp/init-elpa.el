@@ -41,6 +41,7 @@
 
 (defvar user-packages
   '(undo-tree
+    neotree
     realgud
     zenburn-theme
     column-marker

@@ -57,8 +57,6 @@
 
 (progn
   (set-face-attribute 'company-tooltip nil :background "brightblack")
-  (set-face-attribute 'company-tooltip-selection nil :background "magenta")
-  (set-face-attribute 'company-tooltip-common nil :background nil :foreground "#B58900" :inherit 'company-tooltip)
-  (set-face-attribute 'company-tooltip-common-selection nil :background nil :foreground "#B58900" :inherit 'company-tooltip-selection))
+  (set-face-attribute 'company-tooltip-selection nil :background "magenta"))
 
 (provide 'init-company)

@@ -40,6 +40,7 @@
 (require 'init-frame-hooks)
 (require 'init-themes)
 (require 'init-git)
+(require 'init-neotree)
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
@@ -69,7 +70,7 @@
     ("f5512c02e0a6887e987a816918b7a684d558716262ac7ee2dd0437ab913eaec6" default)))
  '(package-selected-packages
    (quote
-    (elpy realgud magit highlight-indent-guides column-marker zenburn-theme paredit rainbow-mode highlight-quoted eldoc-eval redshank aggressive-indent immortal-scratch hl-sexp cask-mode flycheck-package flycheck macrostep cl-lib-highlight auto-compile ipretty lively elisp-slime-nav company-anaconda anaconda-mode pip-requirements projectile unfill highlight-escape-sequences company flx diminish counsel ivy undo-tree))))
+    (neotree elpy realgud magit highlight-indent-guides column-marker zenburn-theme paredit rainbow-mode highlight-quoted eldoc-eval redshank aggressive-indent immortal-scratch hl-sexp cask-mode flycheck-package flycheck macrostep cl-lib-highlight auto-compile ipretty lively elisp-slime-nav company-anaconda anaconda-mode pip-requirements projectile unfill highlight-escape-sequences company flx diminish counsel ivy undo-tree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
