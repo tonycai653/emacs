@@ -11,10 +11,7 @@
   (setq mac-command-modifier 'meta)
   (setq interprogram-cut-function 'paste-to-osx)
   (setq interprogram-paste-function 'copy-from-osx)
-  (setq-default default-input-method "MacOSX")
-  (setq mouse-wheel-scroll-amount '(1
-                                    ((shift) . 5)
-                                    ((control)))))
+  (setq-default default-input-method "MacOSX"))
 
 
 (provide 'init-osx)
