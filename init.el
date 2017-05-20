@@ -78,5 +78,6 @@
  '(font-lock-doc-face ((t (:foreground "#95e454"))))
  '(font-lock-function-name-face ((t (:foreground "#88b8f6"))))
  '(font-lock-keyword-face ((t (:foreground "color-173"))))
+ '(font-lock-variable-name-face ((t (:foreground "white"))))
  '(link ((t (:foreground "brightblue" :underline t :weight bold))))
  '(link-visited ((t (:foreground "color-246" :underline t :weight normal)))))
