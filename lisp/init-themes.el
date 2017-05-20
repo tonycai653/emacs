@@ -9,20 +9,9 @@
       (load-theme theme)))
   (custom-set-variables `(custom-enabled-themes (quote ,custom-enabled-themes))))
 
-(defun custom-zenburn ()
-  "customize zenburn font lock face"
-  (zenburn-with-color-variables
-    (custom-theme-set-faces
-     'zenburn
-     `(font-lock-keyword-face ((t (:foreground "#88b8f6"))))
-     `(font-lock-function-name-face ((t (:foreground "#cae982"))))
-     `(font-lock-string-face ((t (:foreground "#95e454"))))
-     `(font-lock-type-face ((t (:foreground "##d4d987")))))))
-
 (defun load-zenburn-theme ()
   (progn
-    (reapply-themes)
-    (custom-zenburn)))
+    (reapply-themes)))
 
 (add-hook 'after-init-hook 'load-zenburn-theme)
 
