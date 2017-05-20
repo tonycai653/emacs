@@ -58,7 +58,6 @@
 
 
 (provide 'init)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -67,21 +66,14 @@
  '(custom-enabled-themes (quote (zenburn)))
  '(custom-safe-themes
    (quote
-    ("f5512c02e0a6887e987a816918b7a684d558716262ac7ee2dd0437ab913eaec6" default)))
- '(package-selected-packages
-   (quote
-    (neotree elpy realgud magit highlight-indent-guides column-marker zenburn-theme paredit rainbow-mode highlight-quoted eldoc-eval redshank aggressive-indent immortal-scratch hl-sexp cask-mode flycheck-package flycheck macrostep cl-lib-highlight auto-compile ipretty lively elisp-slime-nav company-anaconda anaconda-mode pip-requirements projectile unfill highlight-escape-sequences company flx diminish counsel ivy undo-tree))))
+    ("f5512c02e0a6887e987a816918b7a684d558716262ac7ee2dd0437ab913eaec6" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-scrollbar-bg ((t (:background "#191919"))))
- '(company-scrollbar-fg ((t (:background "#0c0c0c"))))
- '(company-tooltip ((t (:inherit default :background "#050505"))))
- '(company-tooltip-common ((t (:inherit font-lock-constant-face))))
- '(company-tooltip-selection ((t (:inherit font-lock-function-name-face)))))
- ;; Local Variables:
-;; coding: utf-8
-;; no-byte-compile: t
-;; End:
+ '(font-lock-comment-delimiter-face ((t (:foreground "color-246"))))
+ '(font-lock-comment-face ((t (:foreground "color-246"))))
+ '(font-lock-doc-face ((t (:foreground "#e5786d"))))
+ '(link ((t (:foreground "brightblue" :underline t :weight bold))))
+ '(link-visited ((t (:foreground "color-246" :underline t :weight normal)))))
