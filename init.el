@@ -72,7 +72,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(font-lock-builtin-face ((t (:foreground "magenta"))))
+ '(font-lock-builtin-face ((t (:foreground "#e5786d" :weight bold))))
  '(font-lock-comment-delimiter-face ((t (:foreground "color-246"))))
  '(font-lock-comment-face ((t (:foreground "color-246"))))
  '(font-lock-doc-face ((t (:foreground "#95e454"))))
