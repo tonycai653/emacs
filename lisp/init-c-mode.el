@@ -1,13 +1,13 @@
+(require 'rtags)
+(require 'company-rtags)
+
+(setq rtags-completions-enabled t)
+;; c offset
+(setq-default c-basic-offset 4)
+
 (add-hook 'c-mode-hook 'irony-mode)
-
-(defun my-irony-mode-hook ()
-  (define-key irony-mode-map [remap completion-at-point]
-    'irony-completion-at-point-async)
-  (define-key irony-mode-map [remap complete-symbol]
-    'irony-completion-at-point-async))
-
-(add-hook 'irony-mode-hook 'my-irony-mode-hook)
-(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+(add-hook 'c-mode-hook 'flycheck-mode)
+(cmake-ide-setup)
 
 
 (provide 'init-c-mode)

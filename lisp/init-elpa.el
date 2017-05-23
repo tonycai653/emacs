@@ -42,6 +42,12 @@
 (defvar user-packages
   '(undo-tree
     neotree
+    cmake-ide
+    rtags
+    company-rtags
+    irony
+    company-irony
+    company-irony-c-headers
     realgud
     zenburn-theme
     column-marker

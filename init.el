@@ -33,6 +33,7 @@
 ;;(require 'init-whitespace)
 
 (require 'init-projectile)
+(require 'init-irony)
 (require 'init-python-mode)
 (require 'init-lisp)
 (require 'init-misc)
@@ -66,7 +67,10 @@
  '(custom-enabled-themes (quote (zenburn)))
  '(custom-safe-themes
    (quote
-    ("f5512c02e0a6887e987a816918b7a684d558716262ac7ee2dd0437ab913eaec6" default))))
+    ("f5512c02e0a6887e987a816918b7a684d558716262ac7ee2dd0437ab913eaec6" default)))
+ '(package-selected-packages
+   (quote
+    (rtags cmake-ide ggtags zenburn-theme yafolding unfill redshank realgud rainbow-mode projectile pip-requirements paredit origami neotree molokai-theme magit macrostep lively ipretty immortal-scratch hl-sexp highlight-quoted highlight-indent-guides highlight-escape-sequences flycheck-package flx evil elpy elisp-slime-nav eldoc-eval diminish counsel company-anaconda column-marker color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cl-lib-highlight cask-mode auto-compile anti-zenburn-theme aggressive-indent))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
