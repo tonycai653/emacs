@@ -1,7 +1,5 @@
-(recentf-mode 1)
-(setq-default
- recentf-max-saved-items 1000
- recentf-exclude '("/tmp/" "/ssh:"))
+(desktop-save-mode t)
 
-
+;; By default, the desktop also tries to save the frame and window configuration, disable it
+(setq desktop-restore-frames nil)
 (provide 'init-recentf)

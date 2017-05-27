@@ -41,6 +41,7 @@
 
 (defvar user-packages
   '(undo-tree
+    whole-line-or-region
     neotree
     cmake-ide
     rtags
