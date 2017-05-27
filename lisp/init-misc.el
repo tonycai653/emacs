@@ -4,7 +4,6 @@
 (require 'init-frame-hooks)
 
 (menu-bar-mode 0)
-(setq-default show-trailing-whitespace t)
 (add-auto-mode 'tcl-mode "Portfile\\'")
 (fset 'yes-or-no-p 'y-or-n-p)
 

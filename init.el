@@ -42,6 +42,7 @@
 (require 'init-themes)
 (require 'init-git)
 (require 'init-neotree)
+(require 'init-window)
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
