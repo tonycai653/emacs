@@ -17,6 +17,11 @@
 (set-face-background 'column-marker-1 "red")
 (add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 80)))
 
+;; use realgud and load it when open python file
+(add-hook 'python-mode-hook (lambda () (interactive) (load-library "realgud")))
+(global-set-key (kbd "C-C d") 'realgud:pdb)
+(setq realgud-safe-mode nil)
+
 ;; origmi
 (add-hook 'python-mode-hook 'origami-mode)
 (define-key origami-mode-map (kbd "C-c f") 'origami-toggle-node)
