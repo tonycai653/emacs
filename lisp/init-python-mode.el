@@ -18,7 +18,7 @@
 (add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 80)))
 
 ;; use realgud and load it when open python file
-(add-hook 'python-mode-hook (lambda () (interactive) (load-library "realgud")))
+(autoload 'realgud:pdb "realgud" "call pdb debugger" t nil)
 (global-set-key (kbd "C-C d") 'realgud:pdb)
 (setq realgud-safe-mode nil)
 
@@ -29,5 +29,6 @@
 (define-key origami-mode-map (kbd "C-c T") 'origami-toggle-all-nodes)
 
 (setq python-shell-interpreter "python3")
+(setq python-indent-offset 4)
 
 (provide 'init-python-mode)
